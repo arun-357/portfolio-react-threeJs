@@ -2,14 +2,15 @@ import { PerspectiveCamera } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
 import { Suspense, useEffect } from 'react';
 
-import Desktop from '../components/Desktop';
-import { CanvasLoader } from '../components/CanvasLoader';
-// import Location from '../components/Location';
 // import { Leva } from 'leva';
 import { useMediaQuery } from 'react-responsive'
 import { calculateSizes } from '../constants';
+
+import Desktop from '../components/Desktop';
+import { CanvasLoader } from '../components/CanvasLoader';
 import ReactLogo from '../components/ReactLogo';
 import ThreeLogo from '../components/ThreeLogo';
+
 
 export const Model = () => {
   // Leva Controls
@@ -87,7 +88,8 @@ export const Model = () => {
                   />
                   <group>
                         <ReactLogo scale={sizes.reactLogoScale} position={sizes.reactLogoPosition}/>
-                        <ThreeLogo scale={sizes.threeLogoScale} position={sizes.threeLogoPosition} />
+                        <ThreeLogo scale={sizes.threeLogoScale} position={sizes.threeLogoPosition}/>
+                        {/* <Astro scale={sizes.astroScale} position={sizes.astroPosition}/> */}
                   </group>
                   <ambientLight intensity={1} />
                   <directionalLight position={[10, 10, 10]} intensity={1} />
