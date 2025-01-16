@@ -42,7 +42,7 @@ const ThreeLogo = ({ ...props }) => {
           receiveShadow
           geometry={nodes.Object_5.geometry}
           material={goldMaterial}
-          // onPointerEnter={() => setHovered(true)}
+          onPointerEnter={() => setHovered(true)}
           onPointerLeave={() => setHovered(false)}
         />
       </group>
