@@ -1,4 +1,4 @@
-import { PerspectiveCamera } from '@react-three/drei';
+import { PerspectiveCamera, Environment } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
 import { Suspense, useEffect } from 'react';
 
@@ -7,9 +7,10 @@ import { useMediaQuery } from 'react-responsive'
 import { calculateSizes } from '../constants';
 
 import Desktop from '../components/Desktop';
-import { CanvasLoader } from '../components/CanvasLoader';
+import CanvasLoader from '../components/CanvasLoader';
 import ReactLogo from '../components/ReactLogo';
 import ThreeLogo from '../components/ThreeLogo';
+import DesktopCamera from '../components/DesktopCamera';
 
 
 export const Model = () => {
@@ -77,21 +78,23 @@ export const Model = () => {
             <Canvas className='w-full h-full'>
                   <Suspense fallback={<CanvasLoader />}>
                   <PerspectiveCamera makeDefault position={[0, 0, 50]} />
-                  <Desktop
-                        scale={sizes.desktopScale}
-                        rotation={sizes.desktopRotation}
-                        position={sizes.desktopPosition}
-                        // Leva Controls
-                        // scale={[levaControls.scale, levaControls.scale, levaControls.scale]} 
-                        // rotation={[levaControls.rotationX, levaControls.rotationY, levaControls.rotationZ]} 
-                        // position={[levaControls.positionX, levaControls.positionY, levaControls.positionZ]}
-                  />
+                  <DesktopCamera isMobile={isMobile}>
+                    <Desktop
+                          scale={sizes.desktopScale}
+                          rotation={sizes.desktopRotation}
+                          position={sizes.desktopPosition}
+                          // Leva Controls
+                          // scale={[levaControls.scale, levaControls.scale, levaControls.scale]} 
+                          // rotation={[levaControls.rotationX, levaControls.rotationY, levaControls.rotationZ]} 
+                          // position={[levaControls.positionX, levaControls.positionY, levaControls.positionZ]}
+                    />
+                  </DesktopCamera>
                   <group>
                         <ReactLogo scale={sizes.reactLogoScale} position={sizes.reactLogoPosition}/>
                         <ThreeLogo scale={sizes.threeLogoScale} position={sizes.threeLogoPosition}/>
                         {/* <Astro scale={sizes.astroScale} position={sizes.astroPosition}/> */}
                   </group>
-                  <ambientLight intensity={1} />
+                  <Environment preset="city" />
                   <directionalLight position={[10, 10, 10]} intensity={1} />
                   </Suspense>
             </Canvas>
