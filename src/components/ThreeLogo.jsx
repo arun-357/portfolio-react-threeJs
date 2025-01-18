@@ -34,7 +34,7 @@ const ThreeLogo = ({ ...props }) => {
   });
 
   return (
-    <Float floatIntensity={0.5}>
+    <Float floatIntensity={1} rotationIntensity={0.5}>
       <group rotation={[0, 0, 0]} dispose={null} {...props}>
         <mesh
           // ref={threeLogoRef}
