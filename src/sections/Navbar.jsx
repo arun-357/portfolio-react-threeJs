@@ -15,7 +15,7 @@ const NavItems = () => {
       )
 }
 
-export const Navbar = () => {
+export default function Navbar() {
   const [isOpened, setIsOpened] = useState(false)  
 
   const toggleMenu = () => {
