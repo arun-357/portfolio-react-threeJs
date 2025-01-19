@@ -15,6 +15,9 @@ export default function Button({text, containerClass}) {
             spread: 55,
             origin: { x: 1 }
       });
+      setTimeout(() => {
+        window.open('https://www.linkedin.com/in/im-arunachalam', '_blank');
+      }, 1000);
   }
 
   return <>
