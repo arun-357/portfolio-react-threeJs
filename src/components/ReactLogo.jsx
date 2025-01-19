@@ -2,7 +2,7 @@ import { MeshStandardMaterial } from 'three';
 import { Float, useGLTF } from '@react-three/drei';
 
 const ReactLogo = (props) => {
-  const { nodes } = useGLTF('models/react.glb');
+  const { nodes } = useGLTF('models/reactJs/react.glb');
 
   const reactMaterial = new MeshStandardMaterial({
     color: '#61dafb',
@@ -23,6 +23,6 @@ const ReactLogo = (props) => {
   );
 };
 
-useGLTF.preload('models/react.glb');
+useGLTF.preload('models/reactJs/react.glb');
 
 export default ReactLogo;

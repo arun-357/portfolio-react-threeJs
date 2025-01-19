@@ -10,49 +10,13 @@ import Desktop from '../components/Desktop';
 import CanvasLoader from '../components/CanvasLoader';
 import ReactLogo from '../components/ReactLogo';
 import ThreeLogo from '../components/ThreeLogo';
+import HtmlLogo from '../components/HtmlLogo';
+import CssLogo from '../components/CssLogo';
+import Arrow from '../components/Arrow';
 import DesktopCamera from '../components/DesktopCamera';
 import Button from '../components/Button';
 
-
-export const Model = () => {
-  // Leva Controls
-  // const levaControls = useControls('Desktop', {
-  //       positionX: {
-  //             value: 2.5,
-  //             min: -10,
-  //             max: 10,
-  //       },
-  //       positionY: {
-  //             value: 2.5,
-  //             min: -10,
-  //             max: 10,
-  //       },
-  //       positionZ: {
-  //             value: 2.5,
-  //             min: -10,
-  //             max: 11,
-  //       },
-  //       rotationX: {
-  //             value: 0,
-  //             min: -10,
-  //             max: 10,
-  //       },
-  //       rotationY: {
-  //             value: 0,
-  //             min: -10,
-  //             max: 10,
-  //       },
-  //       rotationZ: {
-  //             value: 0,
-  //             min: -10,
-  //             max: 10,
-  //       },
-  //       scale: {
-  //             value: 1,
-  //             min: 0.1,
-  //             max: 10,
-  //       },
-  // });
+export default function Model() {
   const isSmall = useMediaQuery({ query: '(max-width: 380px)' });
   const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
   const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 991 });
@@ -74,9 +38,9 @@ export const Model = () => {
         </p>
         <p className="model_tag">Software Development Engineer</p>   
       </div>
-      <div className='w-full h-full absolute inset-0 flex'>
+      <div className="w-full h-full absolute inset-0">
             {/* <Leva /> */}
-            <Canvas className='w-full h-full'>
+            <Canvas className='w-full'>
                   <Suspense fallback={<CanvasLoader />}>
                   <PerspectiveCamera makeDefault position={[0, 0, 50]} />
                   <DesktopCamera isMobile={isMobile}>
@@ -93,19 +57,16 @@ export const Model = () => {
                   <group>
                         <ReactLogo scale={sizes.reactLogoScale} position={sizes.reactLogoPosition}/>
                         <ThreeLogo scale={sizes.threeLogoScale} position={sizes.threeLogoPosition}/>
-                        {/* <Astro scale={sizes.astroScale} position={sizes.astroPosition}/> */}
+                        { isSmall ||isMobile || isTablet ? <HtmlLogo scale={sizes.htmlCssLogoScale} position={sizes.htmlPosition} rotation={sizes.htmlRotation}/> : null}
+                        { isSmall ||isMobile || isTablet ? <CssLogo scale={sizes.htmlCssLogoScale} position={sizes.cssPosition} rotation={sizes.cssRotation}/> : null}
+                        { isSmall ||isMobile || isTablet ? <Arrow scale={sizes.arrowScale} position={sizes.arrowPosition} rotation={sizes.arrowRotation}/> : null}
                   </group>
                   <Environment preset="city" />
                   <directionalLight position={[10, 10, 10]} intensity={1} />
                   </Suspense>
             </Canvas>
-            {/* {!isMobile && !isTablet && !isSmall && (
-                  <div className='absolute bottom-20 left-10 w-40 h-40'>
-                        <Location />
-                  </div>
-            )} */}
       </div>      
-      <div className='absolute bottom-7 left-0 right-0 w-full z-10 c-space'>
+      <div className={`absolute h-${sizes.button} bottom-7 left-0 right-0 w-full z-10 c-space`}>
         <a href="#contact" className='w-fit'>
           <Button text="Connect with me" containerClass="sm:w-fit w-full sm:min-w-96"/>
         </a>
