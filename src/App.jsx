@@ -1,12 +1,12 @@
-import { Model } from './sections/Model'
-import { Navbar } from './sections/Navbar'
-const App = () => {
+import Model from './sections/Model'
+import Navbar from './sections/Navbar'
+import About from './sections/About'
+export default function App() {
   return (
     <main className='max-w-7xl mx-auto'>
       <Navbar />
       <Model />
+      <About />
     </main>
   )
 }
-
-export default App
