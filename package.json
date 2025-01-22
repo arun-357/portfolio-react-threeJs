@@ -14,14 +14,14 @@
     "@react-three/drei": "^9.121.1",
     "@react-three/fiber": "^8.17.12",
     "canvas-confetti": "^1.9.3",
+    "embla-carousel-react": "^8.5.2",
     "gsap": "^3.12.5",
     "maath": "^0.10.8",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-globe.gl": "^2.30.0",
     "react-responsive": "^10.0.0",
-    "three": "^0.172.0",
-    "valtio": "^2.1.2"
+    "three": "^0.172.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.17.0",
