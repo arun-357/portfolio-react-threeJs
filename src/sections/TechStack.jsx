@@ -8,7 +8,7 @@ import {
   usePrevNextButtons
 } from '../components/EmbalButtons'
 
-const imagesUrls = [123, 4, 5, 6, 66, 7, 8].map((url) => `slider/${url}.png`);
+const imagesUrls = [123, 4, 5, 6, 66, 7, 8, 9, 10, 11].map((url) => `slider/${url}.png`);
 const options = { dragFree: true };
 const slideCount = imagesUrls.length;
 const slides =  Array.from(Array(slideCount).keys());
