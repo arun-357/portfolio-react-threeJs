@@ -17,12 +17,12 @@ function HeaderText() {
   const useMatCap = useTexture('./assets/gold.png');
   return (
       <Float floatIntensity={1}>
-            <Center position={[1.5, 1.5, -0.1]} rotation={[0, 0, 0]} scale={3}>
-                  <Text font="./fonts/Bebas.woff">
-                  TECH STACK
-                  <meshMatcapMaterial matcap={useMatCap} />
-                  </Text>
-            </Center>
+        <Center position={[1.5, 1.5, -0.1]} rotation={[0, 0, 0]} scale={3}>
+          <Text font="./fonts/Bebas.woff">
+          TECH STACK
+          <meshMatcapMaterial matcap={useMatCap} />
+          </Text>
+        </Center>
       </Float>
   )
 }
@@ -56,7 +56,7 @@ export default function TechStack() {
   return <>
    <div className="absolute w-full flex relative">
       <Canvas>
-            <HeaderText />
+        <HeaderText />
       </Canvas>
    </div>
     <div className="embla">
