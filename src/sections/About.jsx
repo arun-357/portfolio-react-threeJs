@@ -1,5 +1,6 @@
 import { useState, useCallback, useRef, useEffect } from 'react';
 import Globe from 'react-globe.gl';
+import confetti from "canvas-confetti"
 
 import { latLogWorkLabel } from '../constants'
 
@@ -7,6 +8,18 @@ const About = () => {
   const [hasCopied, setHasCopied] = useState(false);
 
   const handleCopy = () => {
+    confetti({
+      particleCount: 40,
+      angle: 60,
+      spread: 55,
+      origin: { x: 0 }
+    });
+    confetti({
+      particleCount: 40,
+      angle: 120,
+      spread: 55,
+      origin: { x: 1 }
+    });
     navigator.clipboard.writeText('arunachalamnachiappan20@gmail.com');
     setHasCopied(true);
 
@@ -25,27 +38,27 @@ const About = () => {
   const globalRef = useRef()
 
   const emitArc = useCallback(({ lat: startLat, lng: startLng }) => {
-      const { lat: endLat, lng: endLng } = latLogWorkLabel[0];
-      // add and remove arc after 1 cycle
-      const arc = { startLat, startLng, endLat, endLng };
-      setArcsData(curArcsData => [...curArcsData, arc]);
-      setTimeout(() => setArcsData(curArcsData => curArcsData.filter(d => d !== arc)), FLIGHT_TIME * 2);
+    const { lat: endLat, lng: endLng } = latLogWorkLabel[0];
+    // add and remove arc after 1 cycle
+    const arc = { startLat, startLng, endLat, endLng };
+    setArcsData(curArcsData => [...curArcsData, arc]);
+    setTimeout(() => setArcsData(curArcsData => curArcsData.filter(d => d !== arc)), FLIGHT_TIME * 2);
 
-      // add and remove start rings
-      const srcRing = { lat: startLat, lng: startLng };
-      setRingsData(curRingsData => [...curRingsData, srcRing]);
-      setTimeout(() => setRingsData(curRingsData => curRingsData.filter(r => r !== srcRing)), FLIGHT_TIME * ARC_REL_LEN);
+    // add and remove start rings
+    const srcRing = { lat: startLat, lng: startLng };
+    setRingsData(curRingsData => [...curRingsData, srcRing]);
+    setTimeout(() => setRingsData(curRingsData => curRingsData.filter(r => r !== srcRing)), FLIGHT_TIME * ARC_REL_LEN);
 
-      // add and remove target rings
-      setTimeout(() => {
-        const targetRing = { lat: endLat, lng: endLng };
-        setRingsData(curRingsData => [...curRingsData, targetRing]);
-        setTimeout(() => setRingsData(curRingsData => curRingsData.filter(r => r !== targetRing)), FLIGHT_TIME * ARC_REL_LEN);
-      }, FLIGHT_TIME);
+    // add and remove target rings
+    setTimeout(() => {
+      const targetRing = { lat: endLat, lng: endLng };
+      setRingsData(curRingsData => [...curRingsData, targetRing]);
+      setTimeout(() => setRingsData(curRingsData => curRingsData.filter(r => r !== targetRing)), FLIGHT_TIME * ARC_REL_LEN);
+    }, FLIGHT_TIME);
   }, []);
 
   useEffect(() => {
-      globalRef.current.pointOfView({lat: 20.5937, lng: 78.9629, altitude: 1.5}, 4000);
+    globalRef.current.pointOfView({lat: 20.5937, lng: 78.9629, altitude: 1.5}, 4000);
   }, []);
 
   return (
@@ -57,8 +70,8 @@ const About = () => {
             <div>
               <p className="grid-headtext">Short Story</p>
               <p className="grid-subtext">
-                  With around 3 years of experience, I have developed expertise in both frontend and backend development, building dynamic applications and smart home systems. 
-                  My work includes creating microservices and integrating technologies such as AWS, Google Home, and Alexa Skills Kit to enhance system functionality and user experience.
+                With around 3 years of experience, I have developed expertise in both frontend and backend development, building dynamic applications and smart home systems. 
+                My work includes creating microservices and integrating technologies such as AWS, Google Home, and Alexa Skills Kit to enhance system functionality and user experience.
               </p>
             </div>
           </div>

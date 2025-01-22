@@ -39,32 +39,32 @@ export default function Model() {
         <p className="model_tag">Software Development Engineer</p>   
       </div>
       <div className="w-full h-full absolute inset-0">
-            {/* <Leva /> */}
-            <Canvas className='w-full'>
-                  <Suspense fallback={<CanvasLoader />}>
-                  <PerspectiveCamera makeDefault position={[0, 0, 50]} />
-                  <DesktopCamera isMobile={isMobile}>
-                    <Desktop
-                          scale={sizes.desktopScale}
-                          rotation={sizes.desktopRotation}
-                          position={sizes.desktopPosition}
-                          // Leva Controls
-                          // scale={[levaControls.scale, levaControls.scale, levaControls.scale]} 
-                          // rotation={[levaControls.rotationX, levaControls.rotationY, levaControls.rotationZ]} 
-                          // position={[levaControls.positionX, levaControls.positionY, levaControls.positionZ]}
-                    />
-                  </DesktopCamera>
-                  <group>
-                        <ReactLogo scale={sizes.reactLogoScale} position={sizes.reactLogoPosition}/>
-                        <ThreeLogo scale={sizes.threeLogoScale} position={sizes.threeLogoPosition}/>
-                        { isSmall ||isMobile || isTablet ? <HtmlLogo scale={sizes.htmlCssLogoScale} position={sizes.htmlPosition} rotation={sizes.htmlRotation}/> : null}
-                        { isSmall ||isMobile || isTablet ? <CssLogo scale={sizes.htmlCssLogoScale} position={sizes.cssPosition} rotation={sizes.cssRotation}/> : null}
-                        { isSmall ||isMobile || isTablet ? <Arrow scale={sizes.arrowScale} position={sizes.arrowPosition} rotation={sizes.arrowRotation}/> : null}
-                  </group>
-                  <Environment preset="city" />
-                  <directionalLight position={[10, 10, 10]} intensity={1} />
-                  </Suspense>
-            </Canvas>
+        {/* <Leva /> */}
+        <Canvas className='w-full'>
+          <Suspense fallback={<CanvasLoader />}>
+            <PerspectiveCamera makeDefault position={[0, 0, 50]} />
+            <DesktopCamera isMobile={isMobile}>
+              <Desktop
+                scale={sizes.desktopScale}
+                rotation={sizes.desktopRotation}
+                position={sizes.desktopPosition}
+                // Leva Controls
+                // scale={[levaControls.scale, levaControls.scale, levaControls.scale]} 
+                // rotation={[levaControls.rotationX, levaControls.rotationY, levaControls.rotationZ]} 
+                // position={[levaControls.positionX, levaControls.positionY, levaControls.positionZ]}
+              />
+            </DesktopCamera>
+            <group>
+              <ReactLogo scale={sizes.reactLogoScale} position={sizes.reactLogoPosition}/>
+              <ThreeLogo scale={sizes.threeLogoScale} position={sizes.threeLogoPosition}/>
+              { isSmall ||isMobile || isTablet ? <HtmlLogo scale={sizes.htmlCssLogoScale} position={sizes.htmlPosition} rotation={sizes.htmlRotation}/> : null}
+              { isSmall ||isMobile || isTablet ? <CssLogo scale={sizes.htmlCssLogoScale} position={sizes.cssPosition} rotation={sizes.cssRotation}/> : null}
+              { isSmall ||isMobile || isTablet ? <Arrow scale={sizes.arrowScale} position={sizes.arrowPosition} rotation={sizes.arrowRotation}/> : null}
+            </group>
+            <Environment preset="city" />
+            <directionalLight position={[10, 10, 10]} intensity={1} />
+          </Suspense>
+        </Canvas>
       </div>      
       <div className={`absolute h-${sizes.button} bottom-7 left-0 right-0 w-full z-10 c-space`}>
         <a href="#contact" className='w-fit'>

@@ -16,9 +16,9 @@ export default function Arrow({...props}) {
   const scrollRef = useRef();
 
   useFrame(() => {
-      if (arrowRef.current) {
-        arrowRef.current.rotation.z += 0.01;
-      }
+    if (arrowRef.current) {
+      arrowRef.current.rotation.z += 0.01;
+    }
   });
 
   useFrame(() => {
@@ -31,8 +31,8 @@ export default function Arrow({...props}) {
     <group {...props} dispose={null}>
       <Center ref={scrollRef} position={[0.01, 0.18, -0.1]} rotation={[0, -3.1, 0.1]} scale={0.08}>
         <Text3D letterSpacing={-0.06} size={0.5} font="fonts/Inter_Bold.json">
-            scroll
-            <meshStandardMaterial color="white" />
+          scroll
+          <meshStandardMaterial color="white" />
         </Text3D>
       </Center>
       <group ref={arrowRef} rotation={[-Math.PI / 2, 0.099, -Math.PI / 2]} scale={0.061}>

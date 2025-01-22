@@ -16,14 +16,14 @@ const slides =  Array.from(Array(slideCount).keys());
 function HeaderText() {
   const useMatCap = useTexture('./assets/gold.png');
   return (
-      <Float floatIntensity={1}>
-        <Center position={[1.5, 1.5, -0.1]} rotation={[0, 0, 0]} scale={3}>
-          <Text font="./fonts/Bebas.woff">
+    <Float floatIntensity={1}>
+      <Center position={[1.5, 1.5, -0.1]} rotation={[0, 0, 0]} scale={3}>
+        <Text font="./fonts/Bebas.woff">
           TECH STACK
           <meshMatcapMaterial matcap={useMatCap} />
-          </Text>
-        </Center>
-      </Float>
+        </Text>
+      </Center>
+    </Float>
   )
 }
 
@@ -54,11 +54,11 @@ export default function TechStack() {
   }, [emblaApi, onScroll]);
 
   return <>
-   <div className="absolute w-full flex relative">
+    <div className="absolute w-full flex relative">
       <Canvas>
         <HeaderText />
       </Canvas>
-   </div>
+    </div>
     <div className="embla">
       <div className="embla__viewport" ref={emblaRef}>
         <div className="embla__container">
