@@ -2,7 +2,9 @@ import Model from './sections/Model'
 import Navbar from './sections/Navbar'
 import About from './sections/About'
 import TechStack from './sections/TechStack'
-// import Projects from './sections/Projects'
+import Projects from './sections/Projects'
+import Contact from './sections/Contact'
+import Footer from './sections/Footer'
 export default function App() {
   return (
     <main className='max-w-8xl mx-auto'>
@@ -10,7 +12,9 @@ export default function App() {
       <Model />
       <About />
       <TechStack />
-      {/* <Projects /> */}
+      <Projects />
+      <Contact />
+      <Footer />
     </main>
   )
 }
