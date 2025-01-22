@@ -203,17 +203,34 @@ body {
   }
   
   .embla__controls {
-    @apply grid grid-cols-[auto_1fr] justify-between gap-[1.2rem] mt-[1.8rem] relative;
+    @apply grid grid-rows-2 items-center justify-items-center gap-[0.2rem] mt-[1.8rem] relative;
   }
   
   .embla__progress {
     @apply rounded-[1.1rem] shadow-inner bg-black absolute h-[0.5rem] mx-auto left-0 right-0 bottom-3 max-w-[90%] overflow-hidden;
-    width: 13rem; /* Use inline styling for static widths */
+    width: 13rem;
   }
   
   .embla__progress__bar {
     @apply bg-white absolute w-full top-0 bottom-0;
     left: -100%;
+  }
+
+  .embla__buttons {
+    @apply flex gap-[0.6rem] items-center;;
+  }
+  
+  .embla__button {
+    @apply appearance-none bg-transparent touch-manipulation inline-flex cursor-pointer border-0 p-0 m-0 w-[2.6rem] h-[2.6rem] rounded-full flex items-center justify-center z-[1];
+    color: white;
+  }
+  
+  .embla__button:disabled {
+    color: white;
+  }
+  
+  .embla__button__svg {
+    @apply w-[35%] h-[35%];
   }
   
 }

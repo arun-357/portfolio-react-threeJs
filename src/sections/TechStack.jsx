@@ -2,6 +2,11 @@ import { useCallback, useEffect, useState } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { Text, Center, useTexture, Float } from '@react-three/drei';
 import useEmblaCarousel from 'embla-carousel-react';
+import {
+  NextButton,
+  PrevButton,
+  usePrevNextButtons
+} from '../components/EmbalButtons'
 
 const imagesUrls = [123, 4, 5, 6, 66, 7, 8].map((url) => `slider/${url}.png`);
 const options = { dragFree: true };
@@ -26,6 +31,13 @@ export default function TechStack() {
   const [emblaRef, emblaApi] = useEmblaCarousel(options);
   const [scrollProgress, setScrollProgress] = useState(0);
 
+  const {
+    prevBtnDisabled,
+    nextBtnDisabled,
+    onPrevButtonClick,
+    onNextButtonClick
+  } = usePrevNextButtons(emblaApi)
+
   const onScroll = useCallback((emblaApi) => {
     const progress = Math.max(0, Math.min(1, emblaApi.scrollProgress()));
     setScrollProgress(progress * 100);
@@ -40,11 +52,6 @@ export default function TechStack() {
       .on('scroll', onScroll)
       .on('slideFocus', onScroll)
   }, [emblaApi, onScroll]);
-  // return (
-  //   <section className="absolute min-h-screen w-full flex flex-col relative">
-  //     <div className='w-full h-full absolute inset-0 flex'>
-  //       <Suspense fallback={null}>
-  //         <Canvas gl={{ antialias: false }} dpr={[1, 1.5]} onPointerMissed={() => (state.clicked = null)}>
 
   return <>
    <div className="absolute w-full flex relative">
@@ -64,6 +71,10 @@ export default function TechStack() {
       </div>
 
       <div className="embla__controls">
+        <div className="embla__buttons">
+          <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
+          <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
+        </div>
         <div className="embla__progress">
           <div
             className="embla__progress__bar"
