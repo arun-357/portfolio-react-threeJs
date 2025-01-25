@@ -32,16 +32,6 @@ export default function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    confetti({
-      shapes: [confetti.shapeFromText({ text: '🚀', scalar: 2 })],
-      scalar: 2,
-      particleCount: 30,
-      angle: 90,
-      spread: 100,
-      origin: { y: 1 },
-      flat: true,
-      gravity: -1
-    });
     try {
       const matcher = new RegExpMatcher({...englishDataset.build(), ...englishRecommendedTransformers});
       // Whoa, did someone forget their manners? Try again with a smile!
@@ -61,7 +51,19 @@ export default function Contact() {
             },
             import.meta.env.KEY,
           );
-        alert('Email sent 😀!');
+        confetti({
+          shapes: [confetti.shapeFromText({ text: '🚀', scalar: 2 })],
+          scalar: 2,
+          particleCount: 30,
+          angle: 90,
+          spread: 100,
+          origin: { y: 1 },
+          flat: true,
+          gravity: -1
+        });
+        setTimeout(() => {
+          alert('Email sent 😀!');
+        }, 2500);
       }
 
       setLoading(false);
