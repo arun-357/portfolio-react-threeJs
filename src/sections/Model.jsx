@@ -62,7 +62,6 @@ export default function Model() {
               { isSmall ||isMobile || isTablet ? <Arrow scale={sizes.arrowScale} position={sizes.arrowPosition} rotation={sizes.arrowRotation}/> : null}
             </group>
             <Environment preset="city" />
-            <directionalLight position={[10, 10, 10]} intensity={1} />
           </Suspense>
         </Canvas>
       </div>      
