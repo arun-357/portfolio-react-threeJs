@@ -28,7 +28,9 @@ export const myProjects = [
     subdesc:
       'Built with advanced technologies like Three.js, React, and Tailwind CSS, this portfolio demonstrates technical expertise and creativity, delivering an immersive and engaging presentation for visitors.',    
     href: 'https://github.com/arun-357/portfolio-react-threeJs',
-    texture: '/textures/project/project1.mp4',
+    phone: false,
+    type: 'video',
+    texture: '/models/phone/project1.mp4',
     logo: '/assets/project-logo1.png',
     logoStyle: {
       backgroundColor: '#2A1816',
@@ -60,7 +62,9 @@ export const myProjects = [
     subdesc:
       'Built using Jira Open API, Google Script, Node.js, and Google Chat API, this tool sends automated reminders to team members at the end of each day, ensuring timely and accurate time logging.',    
     href: 'https://github.com/arun-357/jiraTimeLogReminder',
-    texture: '/textures/project/project2.mp4',
+    phone: true,
+    type:'image',
+    texture: '/models/phone/project2.png',
     logo: '/assets/project-logo2.png',
     logoStyle: {
       backgroundColor: '#13202F',
@@ -102,7 +106,9 @@ export const myProjects = [
     subdesc:
       'Created using Python, Telegram Open API, and Spotify’s Pedalboard library, this bot simplifies voice enhancement, providing a fast and reliable tool tailored for content creators !',    
     href: 'https://github.com/arun-357/voiceEnhancer-telegramBot',
-    texture: '/textures/project/project3.mp4',
+    type: 'video',
+    texture: '/models/phone/project3.png',
+    phone: true,
     logo: '/assets/project-logo3.png',
     logoStyle: {
       backgroundColor: '#60f5a1',
@@ -136,7 +142,9 @@ export const myProjects = [
     subdesc:  
       'Developed as part of a Kaggle competition, this solution achieved a top 3% ranking among thousands of participants. Built using Python and XBG Boost machine learning frameworks.',     
     href: 'https://github.com/arun-357/janeStreet-marketPrediction',
-    texture: '/textures/project/project4.mp4',
+    phone: true,
+    type: 'image',
+    texture: '/models/phone/project4.png',
     logo: '/assets/jane.png',
     logoStyle: {
       backgroundColor: '#ffffff',
