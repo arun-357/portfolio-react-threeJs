@@ -1,12 +1,30 @@
 import emailjs from '@emailjs/browser';
 import { useRef, useState } from 'react';
 
+import {
+  RegExpMatcher, englishDataset, englishRecommendedTransformers,
+} from 'obscenity';
+
 export default function Contact() {
   const formRef = useRef();
   const [loading, setLoading] = useState(false);
   const [form, setForm] = useState({ name: '', email: '', message: '' });
 
+  const validateMessage = (value) => {
+    const englishAndNumericOnly = /^[a-zA-Z0-9\s.,!?]*$/;
+    if (!englishAndNumericOnly.test(value)) {
+      return "Please enter only English letters and numbers.";
+    }
+    return "";
+  };
+
   const handleChange = ({ target: { name, value } }) => {
+    if (name === "message") {
+      const errorMessage = validateMessage(value);
+      if (errorMessage) alert("Keep it simple – just A-Z, a-z, and 0-9!");
+      else setForm({ ...form, [name]: value });
+      return;
+    }
     setForm({ ...form, [name]: value });
   };
       
@@ -14,22 +32,28 @@ export default function Contact() {
     e.preventDefault();
     setLoading(true);
     try {
-      await emailjs
-        .send(
-          import.meta.env.SERVICE_ID,
-          import.meta.env.TEMPLATE_ID,
-          {
-            from_name: form.name,
-            to_name: 'Arun',
-            from_email: form.email,
-            to_email: import.meta.env.TO_EMAIL,
-            message: form.message,
-          },
-          import.meta.env.KEY,
-        );
-      alert('Email sent 😀!');
-      setLoading(false);
+      const matcher = new RegExpMatcher({...englishDataset.build(), ...englishRecommendedTransformers});
+      // Whoa, did someone forget their manners? Try again with a smile!
+      if (matcher.hasMatch(`${form.name} ${form.email} ${form.message}`)) {
+        alert('Whoa, did someone forget their manners? Try again with a smile!');
+      } else {
+        await emailjs
+          .send(
+            import.meta.env.SERVICE_ID,
+            import.meta.env.TEMPLATE_ID,
+            {
+              from_name: form.name,
+              to_name: 'Arun',
+              from_email: form.email,
+              to_email: import.meta.env.TO_EMAIL,
+              message: form.message,
+            },
+            import.meta.env.KEY,
+          );
+        alert('Email sent 😀!');
+      }
 
+      setLoading(false);
       setTimeout(() => {
         setForm({
           name: '',
