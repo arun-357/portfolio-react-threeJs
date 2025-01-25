@@ -178,7 +178,6 @@ export const myProjects = [
 ];
 
 export const calculateSizes = (isSmall, isMobile, isTablet) => {
-  console.log(isSmall, isMobile, isTablet);
   return {
     desktopScale: isSmall ? 1 : isMobile ? 1 : 1.4,
     desktopPosition: isSmall ?  [7.3, 1.7, -2.5] : isTablet ? [10, -1, 1] : isMobile ? [7.3, 3.9, -2.5] : [9.7, -9, 11],

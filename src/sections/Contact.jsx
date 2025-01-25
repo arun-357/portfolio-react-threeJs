@@ -76,7 +76,7 @@ export default function Contact() {
       }, [3000]);
     } catch (error) {
       setLoading(false);
-      console.log(error);
+      console.log(error, import.meta.env.SERVICE_ID, import.meta.env.TEMPLATE_ID, import.meta.env.EMAIL_KEY);
       alert('An error occurred while sending your message.');
     }
   };
