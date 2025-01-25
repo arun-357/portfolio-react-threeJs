@@ -16,7 +16,7 @@ export default function Button({text, containerClass}) {
       origin: { x: 1 }
     });
     setTimeout(() => {
-      window.open('https://www.linkedin.com/in/im-arunachalam', '_blank');
+      window.open('https://www.linkedin.com/in/im-arunachalam', '_blank', 'noopener');
     }, 1000);
   }
 
