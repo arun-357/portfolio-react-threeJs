@@ -88,7 +88,7 @@ export default function Contact() {
         <div className="contact-container">
           <h3 className="head-text">Connect with me</h3>
           <p className="text-lg text-white-600 mt-3">
-            Hope you enjoyed exploring my portfolio! If you’re interested in collaborating, let’s connect
+            Hope you enjoyed exploring my portfolio! If you’re interested in collaborating, let’s connect 🫱🏼‍🫲🏽!
           </p>
 
           <form ref={formRef} onSubmit={handleSubmit} className="mt-12 flex flex-col space-y-7">
