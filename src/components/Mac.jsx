@@ -23,7 +23,7 @@ export default function Mac(props) {
   }, [texture]);
 
   return (
-    <group ref={group} scale={0.02} position={[0,0.5,0]} {...props} dispose={null}>
+    <group ref={group} scale={0.02} position={[0, 0.5, 0]} rotation={[0, 5, 0]} {...props} dispose={null}>
       <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
         <mesh
           castShadow
