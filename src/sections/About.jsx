@@ -109,7 +109,7 @@ const About = () => {
               <p className="grid-subtext">I&apos;m based in Coimbatore, India and open to work Pan India.</p>
               <div className="copy-container p-4 mt-2" onClick={handleCopy}>
                 <img src={hasCopied ? 'assets/tick.svg' : 'assets/copy.svg'} alt="copy" className="w-7 h-7"/>
-                <p className="text-sm font-medium text-gray_gradient text-white">arunachalamnachiappan20@gamil.com</p>
+                <p className="text-sm font-medium text-gray_gradient text-white">arunachalamnachiappan20@gmail.com</p>
               </div>
             </div>
           </div>
