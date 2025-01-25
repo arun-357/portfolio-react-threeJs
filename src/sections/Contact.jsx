@@ -40,16 +40,16 @@ export default function Contact() {
       } else {
         await emailjs
           .send(
-            import.meta.env.SERVICE_ID,
-            import.meta.env.TEMPLATE_ID,
+            import.meta.env.VITE_SERVICE_ID,
+            import.meta.env.VITE_TEMPLATE_ID,
             {
               from_name: form.name,
               to_name: 'Arun',
               from_email: form.email,
-              to_email: import.meta.env.TO_EMAIL,
+              to_email: import.meta.env.VITE_TO_EMAIL,
               message: form.message,
             },
-            import.meta.env.EMAIL_KEY
+            import.meta.env.VITE_EMAIL_KEY
           );
         confetti({
           shapes: [confetti.shapeFromText({ text: '🚀', scalar: 2 })],
