@@ -1,5 +1,6 @@
 import emailjs from '@emailjs/browser';
 import { useRef, useState } from 'react';
+import confetti from "canvas-confetti";
 
 import {
   RegExpMatcher, englishDataset, englishRecommendedTransformers,
@@ -31,6 +32,16 @@ export default function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+    confetti({
+      shapes: [confetti.shapeFromText({ text: '🚀', scalar: 2 })],
+      scalar: 2,
+      particleCount: 30,
+      angle: 90,
+      spread: 100,
+      origin: { y: 1 },
+      flat: true,
+      gravity: -1
+    });
     try {
       const matcher = new RegExpMatcher({...englishDataset.build(), ...englishRecommendedTransformers});
       // Whoa, did someone forget their manners? Try again with a smile!
