@@ -30,7 +30,7 @@ export const myProjects = [
     href: 'https://github.com/arun-357/portfolio-react-threeJs',
     phone: false,
     type: 'video',
-    texture: '/models/phone/project1.mp4',
+    texture: '/models/mac/project1.mp4',
     logo: '/assets/project-logo1.png',
     logoStyle: {
       backgroundColor: '#2A1816',
