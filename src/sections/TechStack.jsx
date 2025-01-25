@@ -6,7 +6,7 @@ import {
   NextButton,
   PrevButton,
   usePrevNextButtons
-} from '../components/EmbalButtons'
+} from '../components/EmbalButtons';
 
 const imagesUrls = [123, 4, 5, 6, 66, 7, 8, 9, 10, 11].map((url) => `slider/${url}.png`);
 const options = { dragFree: true };
@@ -14,7 +14,7 @@ const slideCount = imagesUrls.length;
 const slides =  Array.from(Array(slideCount).keys());
 
 function HeaderText() {
-  const useMatCap = useTexture('./assets/gold.png');
+  const useMatCap = useTexture('./assets/purple.png');
   return (
     <Float floatIntensity={1}>
       <Center position={[1.5, 1.5, -0.1]} rotation={[0, 0, 0]} scale={3}>

@@ -189,9 +189,6 @@ export const calculateSizes = (isSmall, isMobile, isTablet) => {
 
     threeLogoScale: isSmall ? 0.02 : isMobile ? 0.03 : isTablet ? 0.03 : 0.08,
     threeLogoPosition: isSmall ? [-9, 11, 0] : isMobile ? [-9, 13.5, 0] : isTablet ? [-13, 14, 0] : [-32, 4.5, 0],
-    
-    astroScale: isSmall ? 0.7 : isMobile ? 0.7 : isTablet ? 0.7 : 1.5,
-    astroPosition: isSmall ? [-5, 7, 0] : isMobile ? [-10, 10, 0] : isTablet ? [-12, 10, 0] : [-24, 10, 0],
 
     htmlCssLogoScale: 0.03,
     htmlPosition: [-5.2, -11.2, 0],
