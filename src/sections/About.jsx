@@ -1,24 +1,22 @@
 import { useState, useCallback, useRef, useEffect } from 'react';
 import Globe from 'react-globe.gl';
-import confetti from "canvas-confetti"
+import confetti from 'canvas-confetti';
 
 import { latLogWorkLabel } from '../constants'
 
 const About = () => {
   const [hasCopied, setHasCopied] = useState(false);
+  let emoji = confetti.shapeFromText({ text: '💯', scalar: 2 });
 
   const handleCopy = () => {
     confetti({
-      particleCount: 40,
-      angle: 60,
-      spread: 55,
-      origin: { x: 0 }
-    });
-    confetti({
-      particleCount: 40,
+      shapes: [emoji],
+      scalar: 2,
+      particleCount: 20,
       angle: 120,
       spread: 55,
-      origin: { x: 1 }
+      origin: { x: 1 , y: 1},
+      flat: true
     });
     navigator.clipboard.writeText('arunachalamnachiappan20@gmail.com');
     setHasCopied(true);
