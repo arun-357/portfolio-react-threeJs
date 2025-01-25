@@ -31,7 +31,7 @@ The project was initially inspired by a YouTube video, but significant changes h
 - **Emit Arc Function**: Emits arcs for globe location visualization.
 - **Vercel**: Deploying the website using Vercel for seamless and efficient deployment.
 
-### Project Structure 🗂️
+## Project Structure 🗂️
 ```
 portfolio/
 ├── public/
@@ -63,7 +63,7 @@ portfolio/
 └── README.md
 ```
 
-### How to Run the Project 🏃‍♂️
+## How to Run the Project 🏃‍♂️
 1. Clone the repository:
    ```bash
    git clone https://github.com/your-username/portfolio.git
@@ -81,8 +81,8 @@ portfolio/
    npm start
    ```
 
-### Future Enhancements 🔮
+## Future Enhancements 🔮
 - Add new section to download resume!
 
-### License 📜
+## License 📜
 This project is licensed under the MIT License.
