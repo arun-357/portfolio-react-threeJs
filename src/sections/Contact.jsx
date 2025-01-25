@@ -49,7 +49,7 @@ export default function Contact() {
               to_email: import.meta.env.TO_EMAIL,
               message: form.message,
             },
-            import.meta.env.KEY,
+            import.meta.env.EMAIL_KEY
           );
         confetti({
           shapes: [confetti.shapeFromText({ text: '🚀', scalar: 2 })],
