@@ -84,5 +84,9 @@ portfolio/
 ## Future Enhancements 🔮
 - Add new section to download resume!
 
+## Attribution 🙏
+- **3D Models**: Downloaded from [Sketchfab](https://sketchfab.com).
+- **Icons**: Downloaded from [Freepik](https://www.freepik.com).
+
 ## License 📜
 This project is licensed under the MIT License.
